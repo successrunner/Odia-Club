@@ -1,0 +1,16 @@
+# EAS Workflow for Production Web deployment
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main  # Only production deployments
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    type: deploy
+    params:
+      prod: true
+    environment: production
+    profile: production-web

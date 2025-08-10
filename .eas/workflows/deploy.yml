@@ -1,0 +1,16 @@
+# EAS Workflow for Development Web deployment
+name: Deploy to Development
+
+on:
+  push:
+    branches:
+      - dev  # Only development deployments
+
+jobs:
+  deploy:
+    name: Deploy to Development
+    type: deploy
+    params:
+      alias: dev
+    environment: development
+    profile: development-web

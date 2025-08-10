@@ -1,0 +1,16 @@
+# EAS Workflow for Staging Web deployment
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - staging  # Only preview deployments
+
+jobs:
+  deploy:
+    name: Deploy to Staging
+    type: deploy
+    params:
+      alias: staging
+    environment: preview
+    profile: preview-web
